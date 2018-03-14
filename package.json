@@ -1,0 +1,45 @@
+{
+  "name": "drachtio-siprec-client",
+  "version": "0.0.1",
+  "description": "drachtio/freeswitch sip outbound proxy that also acts as a siprec client",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "jslint": "eslint lib app.js",
+    "test": "NODE_ENV=test node test/ | ./node_modules/.bin/tap-spec",
+    "coverage": "NODE_ENV=test ./node_modules/.bin/istanbul cover test/ --report html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davehorton/drachtio-siprec-client.git"
+  },
+  "keywords": [
+    "SIP",
+    "drachtio",
+    "freeswitch",
+    "siprec"
+  ],
+  "author": "Dave Horton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davehorton/drachtio-siprec-client/issues"
+  },
+  "homepage": "https://github.com/davehorton/drachtio-siprec-client#readme",
+  "dependencies": {
+    "config": "^1.30.0",
+    "debug": "^3.1.0",
+    "drachtio-fsmrf": "^1.1.4",
+    "drachtio-srf": "^4.2.11",
+    "lodash": "^4.17.5",
+    "momentjs": "^2.0.0",
+    "pino": "^4.13.0",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "blue-tape": "^1.0.0",
+    "istanbul": "^0.4.5",
+    "tap-dot": "^1.0.5",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.9.0"
+  }
+}

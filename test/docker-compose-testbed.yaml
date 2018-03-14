@@ -1,0 +1,47 @@
+version: '2.1'
+
+networks:
+  siprec:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.33.0.0/16
+
+services:
+  drachtio:
+    image: drachtio/drachtio-server:latest
+    command: drachtio --contact "sip:*;transport=udp" --loglevel debug
+    ports:
+      - "9023:9022/tcp"
+    networks:
+      siprec:
+        ipv4_address: 172.33.0.2
+
+  freeswitch:
+    image: drachtio/drachtio-freeswitch-mrf:latest
+    command: freeswitch --rtp-range-start 20000 --rtp-range-end 20100
+    ports:
+      - "8022:8021/tcp"
+    volumes:
+      - /tmp:/usr/local/freeswitch/log
+    networks:
+      siprec:
+        ipv4_address: 172.33.0.3
+
+  sipp-uas:
+    image: drachtio/sipp:latest
+    command: sipp -sn uas
+    tty: true
+    networks:
+      siprec:
+        ipv4_address: 172.33.0.4
+
+  sipp-uas-siprec-server:
+    image: drachtio/sipp:latest
+    command: sipp -sf /tmp/uas_siprec.xml
+    volumes:
+      - ./scenarios:/tmp
+    tty: true
+    networks:
+      siprec:
+        ipv4_address: 172.33.0.5
