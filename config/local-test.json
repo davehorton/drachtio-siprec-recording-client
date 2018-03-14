@@ -1,0 +1,14 @@
+{
+  "drachtio": {
+    "host": "127.0.0.1",
+    "port": 9023,
+    "secret": "cymru"
+  },
+  "freeswitch" : {
+    "address": "127.0.0.1",
+    "port": 8022,
+    "secret": "ClueCon"
+  },
+  "siprec-server": "test_sipp-uas-siprec-server_1",
+  "local-dns-names": []
+}
