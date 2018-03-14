@@ -14,7 +14,11 @@ A SIPREC recording client based on [dractio](https://github.com/davehorton/drach
 
 ## How it works
 
-The application receives an incoming INVITE and first checks to verify that the Request URI refers to a remote server; if not, the INVITE is rejected.  Once the INVITE has been validated, the application creates a conference on Freeswitch and adds 4 endpoints to the conference; one for the incoming caller, one for the outgoing call to the specified destination, and two to stream to the remote SIPREC recording server.  The latter two endpoints are then configured to receive only the caller or callee audio stream rather than the conference mix -- that is, for SIPREC we want to send one stream with only the caller audio, and a second stream with only the callee audio.
+The application receives an incoming INVITE and first checks to verify that the Request URI refers to a remote server; if not, the INVITE is rejected.  
+
+Once the INVITE has been validated, the application creates a conference on Freeswitch and adds 4 endpoints to the conference; one for the incoming caller, one for the outgoing call to the specified destination, and two to stream to the remote SIPREC recording server.  
+
+The latter two endpoints are then configured to receive only the caller or callee audio stream rather than the conference mix -- that is, for SIPREC we want to send one stream with only the caller audio, and a second stream with only the callee audio.
 
 
 
