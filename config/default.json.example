@@ -10,5 +10,5 @@
     "secret": "ClueCon"
   },
   "siprec-server": "siprec.example.com",
-  "local-dns-name": []
+  "local-dns-names": []
 }

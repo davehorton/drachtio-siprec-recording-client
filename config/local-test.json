@@ -9,6 +9,6 @@
     "port": 8022,
     "secret": "ClueCon"
   },
-  "siprec-server": "test_sipp-uas-siprec-server_1",
+  "siprec-server": "172.33.0.5",
   "local-dns-names": []
 }

@@ -9,7 +9,7 @@ test('starting docker network for sip tests..', (t) => {
     //console.log(stderr);
     console.log('docker network started, giving extra time for freeswitch to initialize...');
     setTimeout(() => {
-      exec('docker exec test_freeswitch_1 fs_cli -x "console loglevel debug"', (err, stdout, stderr) => {
+      exec('docker exec freeswitch fs_cli -x "console loglevel debug"', (err, stdout, stderr) => {
         t.end(err) ;
       });
     }, 18000);

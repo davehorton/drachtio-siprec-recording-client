@@ -2,7 +2,6 @@ const config = require('config');
 const pino = require('pino');
 const Srf = require('drachtio-srf');
 const srf = new Srf();
-const _ = require('lodash');
 const callHandler = require('./lib/call-handler');
 const localHostPorts = [];
 
@@ -36,8 +35,9 @@ else {
 srf.use((req, res, next) => {
   const uri = Srf.parseUri(req.uri);
   if (uri) {
-    if (_.find(config.get('local-dns-names'), (nm) => {return nm === uri.host;}) ||
-        _.find(localHostPorts, (hp) => { return hp.host === uri.host && hp.port == (uri.port || 5060); })) {
+    if (
+      (config.has('local-dns-names') ? config.get('local-dns-names') : []).find((nm) => nm === uri.host) ||
+      localHostPorts.find((hp) => hp.host === uri.host && hp.port == (uri.port || 5060))) {
       logger.info(`discarding INVITE addressed to us: ${req.uri}`);
       return res.send(503);
     }

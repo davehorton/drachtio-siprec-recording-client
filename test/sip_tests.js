@@ -20,7 +20,7 @@ test('siprec invite test', (t) => {
   t.timeoutAfter(20000);
 
   const vmap = `-v ${__dirname}/scenarios:/tmp`;
-  const args = 'drachtio/sipp sipp -m 1 -sf /tmp/uac_siprec_pcap.xml test_drachtio_1';
+  const args = 'drachtio/sipp sipp -m 1 -sf /tmp/uac_siprec_pcap.xml drachtio';
   const cmd = `docker run -t --rm --net test_siprec ${vmap} ${args}`;
 
   const srf = require('..');

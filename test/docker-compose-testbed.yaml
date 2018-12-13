@@ -1,4 +1,4 @@
-version: '2.1'
+version: '2'
 
 networks:
   siprec:
@@ -11,6 +11,7 @@ services:
   drachtio:
     image: drachtio/drachtio-server:latest
     command: drachtio --contact "sip:*;transport=udp" --loglevel debug
+    container_name: drachtio
     ports:
       - "9023:9022/tcp"
     networks:
@@ -20,6 +21,7 @@ services:
   freeswitch:
     image: drachtio/drachtio-freeswitch-mrf:latest
     command: freeswitch --rtp-range-start 20000 --rtp-range-end 20100
+    container_name: freeswitch
     ports:
       - "8022:8021/tcp"
     volumes:
@@ -31,6 +33,7 @@ services:
   sipp-uas:
     image: drachtio/sipp:latest
     command: sipp -sn uas
+    container_name: sipp_uas
     tty: true
     networks:
       siprec:
@@ -39,6 +42,7 @@ services:
   sipp-uas-siprec-server:
     image: drachtio/sipp:latest
     command: sipp -sf /tmp/uas_siprec.xml
+    container_name: sipp_siprec_server
     volumes:
       - ./scenarios:/tmp
     tty: true

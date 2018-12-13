@@ -25,7 +25,7 @@
   <send retrans="500">
     <![CDATA[
 
-      INVITE sip:[service]@test_sipp-uas_1 SIP/2.0
+      INVITE sip:[service]@172.33.0.4 SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
       From: sipp <sip:sipp@[local_ip]:[local_port]>;tag=[pid]SIPpTag09[call_number]
       To: [service] <sip:[service]@[remote_ip]:[remote_port]>
