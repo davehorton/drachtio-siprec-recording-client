@@ -1,5 +1,6 @@
 const test = require('tape') ;
 const exec = require('child_process').exec ;
+const async = require('async');
 
 test('starting docker network for sip tests..', (t) => {
   t.timeoutAfter(180000);
