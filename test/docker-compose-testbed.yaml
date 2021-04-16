@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 networks:
   siprec:
@@ -12,6 +12,8 @@ services:
     image: drachtio/drachtio-server:latest
     command: drachtio --contact "sip:*;transport=udp" --loglevel debug
     container_name: drachtio
+    depends_on:
+      - freeswitch
     ports:
       - "9023:9022/tcp"
     networks:
@@ -22,6 +24,10 @@ services:
     image: drachtio/drachtio-freeswitch-mrf:latest
     command: freeswitch --rtp-range-start 20000 --rtp-range-end 20100
     container_name: freeswitch
+    healthcheck:
+      test: ["CMD", "fs_cli" ,"-x", "sofia status"]
+      timeout: 5s
+      retries: 20
     ports:
       - "8022:8021/tcp"
     volumes:

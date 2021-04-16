@@ -27,17 +27,20 @@
   "homepage": "https://github.com/davehorton/drachtio-siprec-client#readme",
   "dependencies": {
     "config": "^3.0.0",
-    "drachtio-fsmrf": "^1.2.6",
-    "drachtio-srf": "^4.4.1",
+    "drachtio-fsmrf": "^2.0.8",
+    "drachtio-srf": "^4.4.46",
+    "moment": "^2.29.1",
     "pino": "^5.10.1",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "blue-tape": "^1.0.0",
+    "async": "^1.5.2",
+    "debug": "^2.6.9",
     "eslint": "^5.10.0",
     "eslint-plugin-promise": "^4.0.1",
+    "fs-extra": "^9.1.0",
     "istanbul": "^0.4.5",
-    "tap-dot": "^2.0.0",
-    "tap-spec": "^5.0.0"
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
   }
 }
