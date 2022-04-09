@@ -29,7 +29,7 @@
     "config": "^3.0.0",
     "drachtio-fsmrf": "^2.0.8",
     "drachtio-srf": "^4.4.46",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "pino": "^5.10.1",
     "uuid": "^3.3.2"
   },
