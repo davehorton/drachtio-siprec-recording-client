@@ -34,7 +34,7 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "async": "^1.5.2",
+    "async": "^2.6.4",
     "debug": "^2.6.9",
     "eslint": "^5.10.0",
     "eslint-plugin-promise": "^4.0.1",
