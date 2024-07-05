@@ -67,7 +67,7 @@ Content-Type: application/rs-metadata+xml
 </participantstreamassoc>
 </recording>
 
---uniqueBoundary
+--uniqueBoundary--
 Content-Disposition: signal;handling=optional
 Content-Type: application/gtd
 
